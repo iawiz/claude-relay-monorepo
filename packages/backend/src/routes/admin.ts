@@ -27,7 +27,7 @@ adminRoutes.post('/auth', async (c) => {
   }
 
   const adminService = new AdminService(c.env.CLAUDE_RELAY_ADMIN_KV)
-  const isValid = await adminService.verifyAdmin(username, password, c.env)
+  const isValid = await adminService.verifyAdmin(username, password)
   
   if (!isValid) {
     return c.json({

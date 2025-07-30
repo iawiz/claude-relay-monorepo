@@ -12,9 +12,9 @@ export class AdminService {
   constructor(private adminKv: KVNamespace) {}
 
   // 验证管理员凭据
-  async verifyAdmin(username: string, password: string, env: any): Promise<boolean> {
-    const adminUsername = env.ADMIN_USERNAME || 'admin'
-    const adminPassword = env.ADMIN_PASSWORD || 'password123'
+  async verifyAdmin(username: string, password: string): Promise<boolean> {
+    const adminUsername = await this.adminKv.get(ADMIN_STORAGE_KEYS.ADMIN_USERNAME)
+    const adminPassword = await this.adminKv.get(ADMIN_STORAGE_KEYS.ADMIN_PASSWORD)
     
     return username === adminUsername && password === adminPassword
   }

@@ -35,6 +35,8 @@ export const PROVIDER_CONFIGS = {
 
 // 存储键
 export const ADMIN_STORAGE_KEYS = {
+  ADMIN_USERNAME: 'ADMIN_USERNAME',
+  ADMIN_PASSWORD: 'ADMIN_PASSWORD',
   MODEL_PROVIDERS: 'admin_model_providers',
   SELECTED_MODEL: 'admin_selected_model',
   CLAUDE_ACCOUNTS: 'admin_claude_accounts'
