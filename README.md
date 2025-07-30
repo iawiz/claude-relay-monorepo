@@ -126,18 +126,6 @@ npm run deploy:all
 
 ## 📋 使用指南
 
-### 配置 Claude Code
-
-部署成功后，配置 Claude Code 使用您的代理服务：
-
-```bash
-# 方式一：命令行参数
-claude-code --api-url https://your-backend.workers.dev
-
-# 方式二：环境变量
-export CLAUDE_API_URL=https://your-backend.workers.dev
-```
-
 ### 访问管理中心
 
 1. 打开 `https://your-frontend.pages.dev/admin`
@@ -146,6 +134,27 @@ export CLAUDE_API_URL=https://your-backend.workers.dev
    - 添加和管理第三方 LLM 供应商
    - 切换使用不同的 AI 模型
    - 查看系统状态和统计信息
+
+### 配置 Claude Code
+
+部署成功后，配置 Claude Code 使用您的代理服务：
+
+1. 修改 Claude Code 配置文件(`~/.claude/settings.json`)中的`ANTHROPIC_BASE_URL`为后端地址:
+
+```json
+{
+  "env": {
+    "ANTHROPIC_API_KEY": "any",
+    "ANTHROPIC_BASE_URL": "https://your-backend.workers.dev"
+  },
+}
+```
+
+2. 启动 Claude Code 开始享受吧～
+
+```bash
+claude
+```
 
 ## 📁 项目结构
 
